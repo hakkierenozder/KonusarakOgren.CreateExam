@@ -1,0 +1,82 @@
+﻿@using KonusarakOgren.CreateExam.Entities.Dtos
+@model IEnumerable<ListExamDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+
+
+<div class="card mb-4 mt-2">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Sınavlar
+    </div>
+    <div class="card-body">
+        <div class="spinner-border" role="status" style="display: none;">
+            <span class="sr-only">Yükleniyor...</span>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="examsTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var exams in Model)
+                    {
+                        <tr name="@exams.Id">
+                            <td>@exams.Id</td>
+                            <td>@exams.Title</td>
+                            <td>@exams.Date</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm btn-delete" data-id="@exams.Id">Sil</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@*<div style="width:90%; margin:0 auto" class="tableExam">
+    <a class="btn btn-primary" asp-controller="Home" asp-action="SaveExam" style="margin-bottom:20px; margin-top:20px;">Yeni Bir Sınav Oluştur</a>
+    <table id="examTable">
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Date</th>
+    </tr>
+    </thead>
+    </table>
+    </div>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+@section Scripts
+{
+    <script src="~/js/examIndex.js" type="application/ecmascript"></script>
+    
+}
+
+
+

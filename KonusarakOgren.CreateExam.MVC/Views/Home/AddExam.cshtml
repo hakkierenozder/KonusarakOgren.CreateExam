@@ -1,0 +1,128 @@
+﻿@model KonusarakOgren.CreateExam.MVC.ViewModels.ExamAddViewModel
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="row">
+    <div class="container">
+        <form asp-controller="Home" asp-action="AddExam">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Başlık</label>
+                <select id="titleSelect" asp-for="Title" class="form-select">
+                    @foreach (var item in ViewBag.WiredDataViewModels)
+                    {
+                        <option>@item.Title</option>
+                        
+                    }
+                </select>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <textarea id="content" asp-for="Content" class="form-control">
+                    @foreach (var item in ViewBag.WiredDataViewModels)
+                    {
+                        <option>@item.Content</option>
+                        
+                    }
+                </textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input class="form-control" asp-for="Question1" placeholder="Soru 1">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input asp-for="Question1.AnswerA" placeholder="A" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Question1.AnswerB" placeholder="B" class="form-control" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input asp-for="Question1.AnswerC" placeholder="A" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Question1.AnswerD" placeholder="B" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" asp-for="Question2" placeholder="Soru 2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input asp-for="Question2.AnswerA" placeholder="A" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Question2.AnswerB" placeholder="B" class="form-control" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input asp-for="Question2.AnswerC" placeholder="A" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Question2.AnswerD" placeholder="B" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" asp-for="Question3" placeholder="Soru 3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input asp-for="Question3.AnswerA" placeholder="A" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Question3.AnswerB" placeholder="B" class="form-control" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input asp-for="Question3.AnswerC" placeholder="A" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Question3.AnswerD" placeholder="B" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" asp-for="Question4" placeholder="Soru 4">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input asp-for="Question4.AnswerA" placeholder="A" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Question4.AnswerB" placeholder="B" class="form-control" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input asp-for="Question4.AnswerC" placeholder="A" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Question4.AnswerD" placeholder="B" class="form-control" />
+                </div>
+            </div>
+
+
+            <div class="form-group" style="text-align:center">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+
+
+

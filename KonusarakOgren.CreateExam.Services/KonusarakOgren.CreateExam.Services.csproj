@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KonusarakOgren.CreateExam.Data\KonusarakOgren.CreateExam.Data.csproj" />
+    <ProjectReference Include="..\KonusarakOgren.CreateExam.Entities\KonusarakOgren.CreateExam.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
